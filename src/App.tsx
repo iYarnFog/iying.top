@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Index from "./pages/Index";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import About from "./pages/About";
+import Blogs from "./pages/Blog";
+import Blog from "./pages/Blog";
+import Features from "./pages/Features";
+import Feature from "./pages/Feature";
+import Contact from "./pages/Contace";
+import FAQ from "./pages/FAQ";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App: React.FC = () => {
+
+    return (
+        <BrowserRouter>
+            <Header/>
+            <Routes>
+                <Route path='/' element={<Navigate to='/index'/>}/>
+                <Route path='/index' element={<Index/>}/>
+                <Route path='/about' element={<About/>}/>
+                <Route path='/blogs' element={<Blogs/>}/>
+                <Route path='/blog' element={<Blog/>}/>
+                <Route path='/features' element={<Features/>}/>
+                <Route path='/feature' element={<Feature/>}/>
+                <Route path='/contact' element={<Contact/>}/>
+                <Route path='/faq' element={<FAQ/>}/>
+            </Routes>
+            <Footer/>
+        </BrowserRouter>
+    );
+
 }
 
 export default App;
