@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Blogs: React.FC = () => {
+
+    useEffect(() => {
+        // Blog cover image
+        if($('.blog-post-thumb').length){
+            // @ts-ignore
+            $('.blog-post-thumb .img').imgfix();
+        }
+    }, []);
 
     return (
         <section className="page">

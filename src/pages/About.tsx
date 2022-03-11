@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const About: React.FC = () => {
+
+    useEffect(() => {
+        // About Us Image
+        const elements = $('.about-image')
+        if (elements.length) {
+            // @ts-ignore
+            elements.imgfix({
+                scale: 1.1
+            });
+        }
+    }, [])
 
     return (
         <section className="page">

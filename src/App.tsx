@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
@@ -12,6 +12,32 @@ import Contact from "./pages/Contace";
 import FAQ from "./pages/FAQ";
 
 const App: React.FC = () => {
+
+    useEffect(() => {
+        // Scroll animation init
+        // @ts-ignore
+        window.sr = new scrollReveal();
+        // Page standard gallery
+        const gallery = $('.page-gallery');
+        if (gallery.length && $('.page-gallery-wrapper').length) {
+            // @ts-ignore
+            gallery.imgfix({
+                scale: 1.1
+            });
+            // @ts-ignore
+            gallery.magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                },
+                zoom: {
+                    enabled: true,
+                    duration: 300,
+                    easing: 'ease-in-out',
+                }
+            });
+        }
+    }, []);
 
     return (
         <BrowserRouter>

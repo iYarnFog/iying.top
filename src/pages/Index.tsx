@@ -1,6 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Index: React.FC = () => {
+
+    useEffect(() => {
+        // Home number counter up
+        if ($('.count-item').length) {
+            // @ts-ignore
+            $('.count-item strong').counterUp({
+                delay: 10,
+                time: 1000
+            });
+        }
+        // Home Video
+        const playButtons = $('.btn-play');
+        if (playButtons.length) {
+            // @ts-ignore
+            playButtons.magnificPopup({
+                disableOn: 700,
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+                fixedContentPos: false
+            });
+        }
+    }, []);
 
     return (
         <>
@@ -23,7 +47,7 @@ const Index: React.FC = () => {
                     </div>
                 </div>
                 <div className="play-button-wrapper">
-                    <a href="javascript:;" className="btn-play">
+                    <a href="#" className="btn-play">
                         <i className="fa fa-play"/>
                     </a>
                 </div>
@@ -33,7 +57,8 @@ const Index: React.FC = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="row">
-                                <div className="col-lg-3 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                                <div className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                     data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
                                     <a href="blue-features-single.html" className="features-small-item">
                                         <div className="icon">
                                             <i className="fa fa-cloud"/>
@@ -42,7 +67,8 @@ const Index: React.FC = () => {
                                         <p>Morbilling pharetra sapiening ut mattis viverra. Curabitur magna.</p>
                                     </a>
                                 </div>
-                                <div className="col-lg-3 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
+                                <div className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                     data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
                                     <a href="blue-features-single.html" className="features-small-item">
                                         <div className="icon">
                                             <i className="fa fa-laptop"/>
@@ -51,16 +77,19 @@ const Index: React.FC = () => {
                                         <p>Donec pellentesque turpis utium lorem imperdiet semper viverra.</p>
                                     </a>
                                 </div>
-                                <div className="col-lg-3 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
+                                <div className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                     data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
                                     <a href="blue-features-single.html" className="features-small-item">
                                         <div className="icon">
                                             <i className="fa fa-video-camera"/>
                                         </div>
                                         <h5 className="features-title">Webcast Services</h5>
-                                        <p>Facilisis arcu ligula, malesuada id tincidunt laoreet, facilisis at justo.</p>
+                                        <p>Facilisis arcu ligula, malesuada id tincidunt laoreet, facilisis at
+                                            justo.</p>
                                     </a>
                                 </div>
-                                <div className="col-lg-3 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.8s">
+                                <div className="col-lg-3 col-md-6 col-sm-6 col-12"
+                                     data-scroll-reveal="enter bottom move 50px over 0.6s after 0.8s">
                                     <a href="blue-features-single.html" className="features-small-item">
                                         <div className="icon">
                                             <i className="fa fa-server"/>
@@ -82,7 +111,8 @@ const Index: React.FC = () => {
                                 <h2 className="section-title">Cloud Services</h2>
                             </div>
                             <div className="left-text">
-                                <p>Phasellus vitae velit sit amet diam semper commodo quis quis libero. Morbi consequat arcu augue, molestie faucibus metus ullamcorper vel.</p>
+                                <p>Phasellus vitae velit sit amet diam semper commodo quis quis libero. Morbi consequat
+                                    arcu augue, molestie faucibus metus ullamcorper vel.</p>
                                 <div className="row">
                                     <div className="col-lg-6 col-md-6 col-sm-12">
                                         <a className="btn-home active" href="blue-features-single.html">
@@ -136,7 +166,8 @@ const Index: React.FC = () => {
                             </div>
                         </div>
                         <div className="col-lg-1"></div>
-                        <div className="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                        <div className="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix"
+                             data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                             <img src="static/picture/blue-1.png" className="img-fluid d-block mx-auto" alt="App"/>
                         </div>
                     </div>
@@ -145,7 +176,8 @@ const Index: React.FC = () => {
             <section className="section padding-bottom-80">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                        <div className="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big"
+                             data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                             <img src="static/picture/blue-2.png" className="img-fluid d-block mx-auto" alt="App"/>
                         </div>
                         <div className="col-lg-1"></div>
@@ -154,7 +186,8 @@ const Index: React.FC = () => {
                                 <h2 className="section-title">Design & Development</h2>
                             </div>
                             <div className="left-text">
-                                <p>Phasellus vitae velit sit amet diam semper commodo quis quis libero. Morbi consequat arcu augue, molestie faucibus metus ullamcorper vel.</p>
+                                <p>Phasellus vitae velit sit amet diam semper commodo quis quis libero. Morbi consequat
+                                    arcu augue, molestie faucibus metus ullamcorper vel.</p>
                                 <div className="row">
                                     <div className="col-lg-6 col-md-6 col-sm-12">
                                         <a className="btn-home active" href="blue-features-single.html">
@@ -252,7 +285,8 @@ const Index: React.FC = () => {
                         </div>
                         <div className="offset-lg-3 col-lg-6">
                             <div className="center-text">
-                                <p>Donec vulputate urna sed rutrum venenatis. Cras consequat magna quis arcu elementum, quis congue risus volutpat.</p>
+                                <p>Donec vulputate urna sed rutrum venenatis. Cras consequat magna quis arcu elementum,
+                                    quis congue risus volutpat.</p>
                             </div>
                         </div>
                     </div>
@@ -273,7 +307,8 @@ const Index: React.FC = () => {
                                         <li><a href="#"><i className="fa fa-linkedin"/></a></li>
                                         <li><a href="#"><i className="fa fa-github"/></a></li>
                                     </ul>
-                                    <p>Proin arcu ligula, malesuada id tincidunt laoreet, facilisis at justo. Sed at lorem.</p>
+                                    <p>Proin arcu ligula, malesuada id tincidunt laoreet, facilisis at justo. Sed at
+                                        lorem.</p>
                                 </div>
                             </div>
                         </div>
@@ -293,7 +328,8 @@ const Index: React.FC = () => {
                                         <li><a href="#"><i className="fa fa-linkedin"/></a></li>
                                         <li><a href="#"><i className="fa fa-github"/></a></li>
                                     </ul>
-                                    <p>Aliquam eget convallis nunc, et porta libero. Etiam velit, lobortis ut tristique.</p>
+                                    <p>Aliquam eget convallis nunc, et porta libero. Etiam velit, lobortis ut
+                                        tristique.</p>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +349,8 @@ const Index: React.FC = () => {
                                         <li><a href="#"><i className="fa fa-linkedin"/></a></li>
                                         <li><a href="#"><i className="fa fa-github"/></a></li>
                                     </ul>
-                                    <p>Curabitur tristique nec orci quis porta. Aliquam leo justo, auctor eget sapien.</p>
+                                    <p>Curabitur tristique nec orci quis porta. Aliquam leo justo, auctor eget
+                                        sapien.</p>
                                 </div>
                             </div>
                         </div>
@@ -350,12 +387,14 @@ const Index: React.FC = () => {
                         </div>
                         <div className="offset-lg-3 col-lg-6">
                             <div className="center-text">
-                                <p>Donec vulputate urna sed rutrum venenatis. Cras consequat magna quis arcu elementum, quis congue risus volutpat.</p>
+                                <p>Donec vulputate urna sed rutrum venenatis. Cras consequat magna quis arcu elementum,
+                                    quis congue risus volutpat.</p>
                             </div>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                        <div className="col-lg-4 col-md-6 col-sm-12"
+                             data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
                             <div className="pricing-item">
                                 <div className="pricing-header">
                                     <h3 className="pricing-title">BASIC PLAN</h3>
@@ -385,7 +424,8 @@ const Index: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
+                        <div className="col-lg-4 col-md-6 col-sm-12"
+                             data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
                             <div className="pricing-item active">
                                 <div className="pricing-header">
                                     <h3 className="pricing-title">ADVANCED PLAN</h3>
@@ -415,7 +455,8 @@ const Index: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
+                        <div className="col-lg-4 col-md-6 col-sm-12"
+                             data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
                             <div className="pricing-item">
                                 <div className="pricing-header">
                                     <h3 className="pricing-title">EXPERT PLAN</h3>
@@ -454,7 +495,8 @@ const Index: React.FC = () => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="info">
-                                    <p>We design and develop <span>web apps</span> that delight your users and grow your business.</p>
+                                    <p>We design and develop <span>web apps</span> that delight your users and grow your
+                                        business.</p>
                                     <a className="btn-white-line" href="#">Contact Us</a>
                                 </div>
                             </div>
@@ -472,7 +514,8 @@ const Index: React.FC = () => {
                         </div>
                         <div className="offset-lg-3 col-lg-6">
                             <div className="center-text">
-                                <p>Donec vulputate urna sed rutrum venenatis. Cras consequat magna quis arcu elementum, quis congue risus volutpat.</p>
+                                <p>Donec vulputate urna sed rutrum venenatis. Cras consequat magna quis arcu elementum,
+                                    quis congue risus volutpat.</p>
                             </div>
                         </div>
                     </div>
@@ -484,10 +527,12 @@ const Index: React.FC = () => {
                                 </div>
                                 <div className="blog-content">
                                     <h3>
-                                        <a href="blue-blog-single.html">Turing Expands the Leadership Team with David Lin, Controller</a>
+                                        <a href="blue-blog-single.html">Turing Expands the Leadership Team with David
+                                            Lin, Controller</a>
                                     </h3>
                                     <div className="text">
-                                        Mauris tellus sem, ultrices varius nisl at, convallis iaculis mauris. Sed eget sem vitae purus tempus dignissim.
+                                        Mauris tellus sem, ultrices varius nisl at, convallis iaculis mauris. Sed eget
+                                        sem vitae purus tempus dignissim.
                                     </div>
                                     <a href="blue-blog-single.html" className="btn-primary-line">Read More</a>
                                 </div>
@@ -500,10 +545,12 @@ const Index: React.FC = () => {
                                 </div>
                                 <div className="blog-content">
                                     <h3>
-                                        <a href="blue-blog-single.html">Turing Partners with Velocloud to Deliver Managed SD-WAN</a>
+                                        <a href="blue-blog-single.html">Turing Partners with Velocloud to Deliver
+                                            Managed SD-WAN</a>
                                     </h3>
                                     <div className="text">
-                                        Cras imperdiet faucibus sem, a dignissim urna feugiat sed. Interdum et malesuada fames ac ante ipsum.
+                                        Cras imperdiet faucibus sem, a dignissim urna feugiat sed. Interdum et malesuada
+                                        fames ac ante ipsum.
                                     </div>
                                     <a href="blue-blog-single.html" className="btn-primary-line">Read More</a>
                                 </div>
@@ -516,10 +563,12 @@ const Index: React.FC = () => {
                                 </div>
                                 <div className="blog-content">
                                     <h3>
-                                        <a href="blue-blog-single.html">Corporate IT Solutions Adds Neva as Senior Account Executive</a>
+                                        <a href="blue-blog-single.html">Corporate IT Solutions Adds Neva as Senior
+                                            Account Executive</a>
                                     </h3>
                                     <div className="text">
-                                        Quisque euismod nec lacus sit amet maximus. Ut convallis sagittis lorem auctor malesuada. Morbi auctor tortor eu.
+                                        Quisque euismod nec lacus sit amet maximus. Ut convallis sagittis lorem auctor
+                                        malesuada. Morbi auctor tortor eu.
                                     </div>
                                     <a href="blue-blog-single.html" className="btn-primary-line">Read More</a>
                                 </div>
